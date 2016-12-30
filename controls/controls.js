@@ -39,14 +39,14 @@ $(function() {
 				// Bind play again button
 				$( '#game-over button' ).one( 'touch click', joinGame );
 
-				// Unsubscribe from the satus event (the same happens if the 
+				// Unsubscribe from the satus event (the same happens if the
 				// client goes offline)
 				ds.event.unsubscribe( 'status/' + name );
 			});
 
 			// Subscribe to the status event. The game is listening for subscriptions
 			// on this event and will use it as a trigger to create the spaceship
-			ds.event.subscribe( 'status/' + name );
+			ds.event.subscribe( 'status/' + name, console.log);
 
 			// Pass the record to both direction pads
 			moveArea.setRecord( record );
